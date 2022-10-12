@@ -1,0 +1,61 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "test",
+        "latest": {
+            "manifest": {
+                "time": "2022-10-05T16:16:32.770081+01:00",
+                "magic": "61dd4d04fa643df7e12db2646724599259516a624348cf62a141690827955553",
+                "version": "v3.40.2"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:OausWqWzdVU=:v1:Fqk1ZWqnmXKxJnzS:VgnLcv5aPTPBr6VLPa3B14LXwbHy0Q=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:test::pulumi-poc::pulumi:pulumi:Stack::pulumi-poc-test",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack"
+                },
+                {
+                    "urn": "urn:pulumi:test::pulumi-poc::pulumi:providers:terraform::default",
+                    "custom": true,
+                    "id": "a4fbe27a-c9b6-447f-ac6f-bb39b33a3623",
+                    "type": "pulumi:providers:terraform",
+                    "inputs": {
+                        "version": "5.6.7"
+                    },
+                    "outputs": {
+                        "version": "5.6.7"
+                    },
+                    "parent": "urn:pulumi:test::pulumi-poc::pulumi:pulumi:Stack::pulumi-poc-test"
+                },
+                {
+                    "urn": "urn:pulumi:test::pulumi-poc::terraform:state:RemoteStateReference::tcell-lgeacy-staging",
+                    "custom": true,
+                    "id": "tcell-lgeacy-staging",
+                    "type": "terraform:state:RemoteStateReference",
+                    "inputs": {
+                        "backendType": "s3",
+                        "bucket": "tcell-legacy-staging-terraform",
+                        "key": "global.tfstate",
+                        "region": "us-east-1"
+                    },
+                    "outputs": {
+                        "backendType": "s3",
+                        "bucket": "tcell-legacy-staging-terraform",
+                        "key": "global.tfstate",
+                        "outputs": {},
+                        "region": "us-east-1"
+                    },
+                    "parent": "urn:pulumi:test::pulumi-poc::pulumi:pulumi:Stack::pulumi-poc-test",
+                    "external": true,
+                    "provider": "urn:pulumi:test::pulumi-poc::pulumi:providers:terraform::default::a4fbe27a-c9b6-447f-ac6f-bb39b33a3623"
+                }
+            ]
+        }
+    }
+}

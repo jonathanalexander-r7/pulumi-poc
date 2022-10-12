@@ -1,0 +1,17 @@
+{
+    "kind": "destroy",
+    "startTime": 1665589479,
+    "message": "",
+    "environment": {
+        "exec.kind": "cli"
+    },
+    "config": {
+        "aws:region": "us-east-1"
+    },
+    "version": 0,
+    "result": "succeeded",
+    "endTime": 1665589484,
+    "resourceChanges": {
+        "delete": 7
+    }
+}

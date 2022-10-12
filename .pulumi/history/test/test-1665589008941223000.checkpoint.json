@@ -1,0 +1,401 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "test",
+        "latest": {
+            "manifest": {
+                "time": "2022-10-12T16:36:48.842297+01:00",
+                "magic": "61dd4d04fa643df7e12db2646724599259516a624348cf62a141690827955553",
+                "version": "v3.40.2"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:OausWqWzdVU=:v1:Fqk1ZWqnmXKxJnzS:VgnLcv5aPTPBr6VLPa3B14LXwbHy0Q=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:test::pulumi-poc::pulumi:pulumi:Stack::pulumi-poc-test",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "outputs": {
+                        "bucket_endpoint": "http://pulumi-bucket-73e54eb.s3-website-us-east-1.amazonaws.com",
+                        "bucket_name": "pulumi-bucket-73e54eb",
+                        "lambda_arn": "arn:aws:lambda:us-east-1:606696011804:function:pulumiLambda-e13b270"
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:test::pulumi-poc::pulumi:providers:aws::default_5_16_2",
+                    "custom": true,
+                    "id": "4f82fa9a-eb10-46da-b039-516fe6ea73e4",
+                    "type": "pulumi:providers:aws",
+                    "inputs": {
+                        "region": "us-east-1",
+                        "version": "5.16.2"
+                    },
+                    "outputs": {
+                        "region": "us-east-1",
+                        "version": "5.16.2"
+                    },
+                    "parent": "urn:pulumi:test::pulumi-poc::pulumi:pulumi:Stack::pulumi-poc-test"
+                },
+                {
+                    "urn": "urn:pulumi:test::pulumi-poc::aws:iam/role:Role::pulumiLambdaRole",
+                    "custom": true,
+                    "id": "pulumiLambdaRole-feec6ac",
+                    "type": "aws:iam/role:Role",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDetachPolicies",
+                            "maxSessionDuration",
+                            "name",
+                            "path"
+                        ],
+                        "assumeRolePolicy": "{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Action\": \"sts:AssumeRole\",\n            \"Principal\": {\n            \"Service\": \"lambda.amazonaws.com\"\n        },\n        \"Effect\": \"Allow\",\n        \"Sid\": \"\"\n        }\n    ]\n}\n",
+                        "forceDetachPolicies": false,
+                        "maxSessionDuration": 3600,
+                        "name": "pulumiLambdaRole-feec6ac",
+                        "path": "/"
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:iam::606696011804:role/pulumiLambdaRole-feec6ac",
+                        "assumeRolePolicy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"},\"Sid\":\"\"}],\"Version\":\"2012-10-17\"}",
+                        "createDate": "2022-10-12T15:36:30Z",
+                        "description": "",
+                        "forceDetachPolicies": false,
+                        "id": "pulumiLambdaRole-feec6ac",
+                        "inlinePolicies": [],
+                        "managedPolicyArns": [],
+                        "maxSessionDuration": 3600,
+                        "name": "pulumiLambdaRole-feec6ac",
+                        "namePrefix": "",
+                        "path": "/",
+                        "tags": {},
+                        "tagsAll": {},
+                        "uniqueId": "AROAY2QPGPAOJLAC2SKQU"
+                    },
+                    "parent": "urn:pulumi:test::pulumi-poc::pulumi:pulumi:Stack::pulumi-poc-test",
+                    "provider": "urn:pulumi:test::pulumi-poc::pulumi:providers:aws::default_5_16_2::4f82fa9a-eb10-46da-b039-516fe6ea73e4",
+                    "propertyDependencies": {
+                        "assumeRolePolicy": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:test::pulumi-poc::aws:s3/bucket:Bucket::pulumi-bucket",
+                    "custom": true,
+                    "id": "pulumi-bucket-73e54eb",
+                    "type": "aws:s3/bucket:Bucket",
+                    "inputs": {
+                        "__defaults": [
+                            "acl",
+                            "bucket",
+                            "forceDestroy"
+                        ],
+                        "acl": "private",
+                        "bucket": "pulumi-bucket-73e54eb",
+                        "forceDestroy": false,
+                        "website": {
+                            "__defaults": [],
+                            "indexDocument": "index.html"
+                        }
+                    },
+                    "outputs": {
+                        "accelerationStatus": "",
+                        "acl": "private",
+                        "arn": "arn:aws:s3:::pulumi-bucket-73e54eb",
+                        "bucket": "pulumi-bucket-73e54eb",
+                        "bucketDomainName": "pulumi-bucket-73e54eb.s3.amazonaws.com",
+                        "bucketRegionalDomainName": "pulumi-bucket-73e54eb.s3.amazonaws.com",
+                        "corsRules": [],
+                        "forceDestroy": false,
+                        "grants": [],
+                        "hostedZoneId": "Z3AQBSTGFYJSTF",
+                        "id": "pulumi-bucket-73e54eb",
+                        "lifecycleRules": [],
+                        "loggings": [],
+                        "objectLockConfiguration": null,
+                        "region": "us-east-1",
+                        "replicationConfiguration": null,
+                        "requestPayer": "BucketOwner",
+                        "serverSideEncryptionConfiguration": null,
+                        "tags": {},
+                        "tagsAll": {},
+                        "versioning": {
+                            "enabled": false,
+                            "mfaDelete": false
+                        },
+                        "website": {
+                            "errorDocument": "",
+                            "indexDocument": "index.html",
+                            "redirectAllRequestsTo": "",
+                            "routingRules": ""
+                        },
+                        "websiteDomain": "s3-website-us-east-1.amazonaws.com",
+                        "websiteEndpoint": "pulumi-bucket-73e54eb.s3-website-us-east-1.amazonaws.com"
+                    },
+                    "parent": "urn:pulumi:test::pulumi-poc::pulumi:pulumi:Stack::pulumi-poc-test",
+                    "provider": "urn:pulumi:test::pulumi-poc::pulumi:providers:aws::default_5_16_2::4f82fa9a-eb10-46da-b039-516fe6ea73e4",
+                    "propertyDependencies": {
+                        "website": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:test::pulumi-poc::aws:s3/bucketObject:BucketObject::index.html",
+                    "custom": true,
+                    "id": "index.html",
+                    "type": "aws:s3/bucketObject:BucketObject",
+                    "inputs": {
+                        "__defaults": [
+                            "forceDestroy",
+                            "key"
+                        ],
+                        "acl": "public-read",
+                        "bucket": "pulumi-bucket-73e54eb",
+                        "contentType": "text/html",
+                        "forceDestroy": false,
+                        "key": "index.html",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "9cdb3c953a8bef0a9e22dae1ca526d9c7be0b0fcb528c0ab1c8d6639b04eb57a",
+                            "path": "index.html"
+                        }
+                    },
+                    "outputs": {
+                        "acl": "public-read",
+                        "bucket": "pulumi-bucket-73e54eb",
+                        "bucketKeyEnabled": false,
+                        "cacheControl": "",
+                        "contentDisposition": "",
+                        "contentEncoding": "",
+                        "contentLanguage": "",
+                        "contentType": "text/html",
+                        "etag": "80e629d54e546fb95d82c2d0dc02dc2a",
+                        "forceDestroy": false,
+                        "id": "index.html",
+                        "key": "index.html",
+                        "metadata": {},
+                        "objectLockLegalHoldStatus": "",
+                        "objectLockMode": "",
+                        "objectLockRetainUntilDate": "",
+                        "serverSideEncryption": "",
+                        "source": {
+                            "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                            "hash": "9cdb3c953a8bef0a9e22dae1ca526d9c7be0b0fcb528c0ab1c8d6639b04eb57a",
+                            "path": "index.html"
+                        },
+                        "storageClass": "STANDARD",
+                        "tags": {},
+                        "tagsAll": {},
+                        "versionId": "",
+                        "websiteRedirect": ""
+                    },
+                    "parent": "urn:pulumi:test::pulumi-poc::pulumi:pulumi:Stack::pulumi-poc-test",
+                    "dependencies": [
+                        "urn:pulumi:test::pulumi-poc::aws:s3/bucket:Bucket::pulumi-bucket"
+                    ],
+                    "provider": "urn:pulumi:test::pulumi-poc::pulumi:providers:aws::default_5_16_2::4f82fa9a-eb10-46da-b039-516fe6ea73e4",
+                    "propertyDependencies": {
+                        "acl": null,
+                        "bucket": [
+                            "urn:pulumi:test::pulumi-poc::aws:s3/bucket:Bucket::pulumi-bucket"
+                        ],
+                        "contentType": null,
+                        "source": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:test::pulumi-poc::aws:lambda/function:Function::pulumiLambda",
+                    "custom": true,
+                    "id": "pulumiLambda-e13b270",
+                    "type": "aws:lambda/function:Function",
+                    "inputs": {
+                        "__defaults": [
+                            "memorySize",
+                            "name",
+                            "packageType",
+                            "publish",
+                            "reservedConcurrentExecutions",
+                            "timeout"
+                        ],
+                        "code": {
+                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                            "hash": "4530a467660d5c348c9fa398c8051819bf479624dff2e99d09c5bfb505ab4e1d",
+                            "path": "lambda_function.zip"
+                        },
+                        "handler": "hello_pulumi",
+                        "memorySize": 128,
+                        "name": "pulumiLambda-e13b270",
+                        "packageType": "Zip",
+                        "publish": false,
+                        "reservedConcurrentExecutions": -1,
+                        "role": "arn:aws:iam::606696011804:role/pulumiLambdaRole-feec6ac",
+                        "runtime": "python3.7",
+                        "timeout": 3
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000}}",
+                        "architectures": [
+                            "x86_64"
+                        ],
+                        "arn": "arn:aws:lambda:us-east-1:606696011804:function:pulumiLambda-e13b270",
+                        "code": {
+                            "4dabf18193072939515e22adb298388d": "0def7320c3a5731c473e5ecbe6d01bc7",
+                            "hash": "4530a467660d5c348c9fa398c8051819bf479624dff2e99d09c5bfb505ab4e1d",
+                            "path": "lambda_function.zip"
+                        },
+                        "codeSigningConfigArn": "",
+                        "deadLetterConfig": null,
+                        "description": "",
+                        "environment": null,
+                        "ephemeralStorage": {
+                            "size": 512
+                        },
+                        "fileSystemConfig": null,
+                        "handler": "hello_pulumi",
+                        "id": "pulumiLambda-e13b270",
+                        "imageConfig": null,
+                        "imageUri": "",
+                        "invokeArn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:606696011804:function:pulumiLambda-e13b270/invocations",
+                        "kmsKeyArn": "",
+                        "lastModified": "2022-10-12T15:36:40.378+0000",
+                        "layers": [],
+                        "memorySize": 128,
+                        "name": "pulumiLambda-e13b270",
+                        "packageType": "Zip",
+                        "publish": false,
+                        "qualifiedArn": "arn:aws:lambda:us-east-1:606696011804:function:pulumiLambda-e13b270:$LATEST",
+                        "qualifiedInvokeArn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:606696011804:function:pulumiLambda-e13b270:$LATEST/invocations",
+                        "reservedConcurrentExecutions": -1,
+                        "role": "arn:aws:iam::606696011804:role/pulumiLambdaRole-feec6ac",
+                        "runtime": "python3.7",
+                        "signingJobArn": "",
+                        "signingProfileVersionArn": "",
+                        "sourceCodeHash": "RTCkZ2YNXDSMn6OYyAUYGb9HliTf8umdCcW/tQWrTh0=",
+                        "sourceCodeSize": 241,
+                        "tags": {},
+                        "tagsAll": {},
+                        "timeout": 3,
+                        "tracingConfig": {
+                            "mode": "PassThrough"
+                        },
+                        "version": "$LATEST",
+                        "vpcConfig": null
+                    },
+                    "parent": "urn:pulumi:test::pulumi-poc::pulumi:pulumi:Stack::pulumi-poc-test",
+                    "dependencies": [
+                        "urn:pulumi:test::pulumi-poc::aws:iam/role:Role::pulumiLambdaRole"
+                    ],
+                    "provider": "urn:pulumi:test::pulumi-poc::pulumi:providers:aws::default_5_16_2::4f82fa9a-eb10-46da-b039-516fe6ea73e4",
+                    "propertyDependencies": {
+                        "code": null,
+                        "handler": null,
+                        "role": [
+                            "urn:pulumi:test::pulumi-poc::aws:iam/role:Role::pulumiLambdaRole"
+                        ],
+                        "runtime": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:test::pulumi-poc::aws:lambda/permission:Permission::allowBucket",
+                    "custom": true,
+                    "id": "allowBucket-a217126",
+                    "type": "aws:lambda/permission:Permission",
+                    "inputs": {
+                        "__defaults": [
+                            "statementId"
+                        ],
+                        "action": "lambda:InvokeFunction",
+                        "function": "arn:aws:lambda:us-east-1:606696011804:function:pulumiLambda-e13b270",
+                        "principal": "s3.amazonaws.com",
+                        "sourceArn": "arn:aws:s3:::pulumi-bucket-73e54eb",
+                        "statementId": "allowBucket-a217126"
+                    },
+                    "outputs": {
+                        "action": "lambda:InvokeFunction",
+                        "function": "arn:aws:lambda:us-east-1:606696011804:function:pulumiLambda-e13b270",
+                        "id": "allowBucket-a217126",
+                        "principal": "s3.amazonaws.com",
+                        "qualifier": "",
+                        "sourceArn": "arn:aws:s3:::pulumi-bucket-73e54eb",
+                        "statementId": "allowBucket-a217126",
+                        "statementIdPrefix": ""
+                    },
+                    "parent": "urn:pulumi:test::pulumi-poc::pulumi:pulumi:Stack::pulumi-poc-test",
+                    "dependencies": [
+                        "urn:pulumi:test::pulumi-poc::aws:lambda/function:Function::pulumiLambda",
+                        "urn:pulumi:test::pulumi-poc::aws:s3/bucket:Bucket::pulumi-bucket"
+                    ],
+                    "provider": "urn:pulumi:test::pulumi-poc::pulumi:providers:aws::default_5_16_2::4f82fa9a-eb10-46da-b039-516fe6ea73e4",
+                    "propertyDependencies": {
+                        "action": null,
+                        "function": [
+                            "urn:pulumi:test::pulumi-poc::aws:lambda/function:Function::pulumiLambda"
+                        ],
+                        "principal": null,
+                        "sourceArn": [
+                            "urn:pulumi:test::pulumi-poc::aws:s3/bucket:Bucket::pulumi-bucket"
+                        ]
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:test::pulumi-poc::aws:s3/bucketNotification:BucketNotification::bucketNotification",
+                    "custom": true,
+                    "id": "pulumi-bucket-73e54eb",
+                    "type": "aws:s3/bucketNotification:BucketNotification",
+                    "inputs": {
+                        "__defaults": [
+                            "eventbridge"
+                        ],
+                        "bucket": "pulumi-bucket-73e54eb",
+                        "eventbridge": false,
+                        "lambdaFunctions": [
+                            {
+                                "__defaults": [],
+                                "events": [
+                                    "s3:ObjectCreated:*"
+                                ],
+                                "filterPrefix": "AWSLogs/",
+                                "filterSuffix": ".log",
+                                "lambdaFunctionArn": "arn:aws:lambda:us-east-1:606696011804:function:pulumiLambda-e13b270"
+                            }
+                        ]
+                    },
+                    "outputs": {
+                        "bucket": "pulumi-bucket-73e54eb",
+                        "eventbridge": false,
+                        "id": "pulumi-bucket-73e54eb",
+                        "lambdaFunctions": [
+                            {
+                                "events": [
+                                    "s3:ObjectCreated:*"
+                                ],
+                                "filterPrefix": "AWSLogs/",
+                                "filterSuffix": ".log",
+                                "id": "tf-s3-lambda-20221012153647781900000001",
+                                "lambdaFunctionArn": "arn:aws:lambda:us-east-1:606696011804:function:pulumiLambda-e13b270"
+                            }
+                        ],
+                        "queues": [],
+                        "topics": []
+                    },
+                    "parent": "urn:pulumi:test::pulumi-poc::pulumi:pulumi:Stack::pulumi-poc-test",
+                    "dependencies": [
+                        "urn:pulumi:test::pulumi-poc::aws:lambda/function:Function::pulumiLambda",
+                        "urn:pulumi:test::pulumi-poc::aws:s3/bucket:Bucket::pulumi-bucket",
+                        "urn:pulumi:test::pulumi-poc::aws:lambda/permission:Permission::allowBucket"
+                    ],
+                    "provider": "urn:pulumi:test::pulumi-poc::pulumi:providers:aws::default_5_16_2::4f82fa9a-eb10-46da-b039-516fe6ea73e4",
+                    "propertyDependencies": {
+                        "bucket": [
+                            "urn:pulumi:test::pulumi-poc::aws:s3/bucket:Bucket::pulumi-bucket"
+                        ],
+                        "lambdaFunctions": [
+                            "urn:pulumi:test::pulumi-poc::aws:lambda/function:Function::pulumiLambda"
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

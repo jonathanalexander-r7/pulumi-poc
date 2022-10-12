@@ -1,0 +1,89 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "test",
+        "latest": {
+            "manifest": {
+                "time": "2022-10-05T12:25:55.049586+01:00",
+                "magic": "61dd4d04fa643df7e12db2646724599259516a624348cf62a141690827955553",
+                "version": "v3.40.2"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:OausWqWzdVU=:v1:Fqk1ZWqnmXKxJnzS:VgnLcv5aPTPBr6VLPa3B14LXwbHy0Q=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:test::pulumi-poc::pulumi:pulumi:Stack::pulumi-poc-test",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "outputs": {
+                        "bucket_name": "pulumi-bucket-a334565"
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:test::pulumi-poc::pulumi:providers:aws::default_5_16_2",
+                    "custom": true,
+                    "id": "c7ae4202-25b6-401a-98c7-3a9265147d72",
+                    "type": "pulumi:providers:aws",
+                    "inputs": {
+                        "region": "us-east-1",
+                        "version": "5.16.2"
+                    },
+                    "outputs": {
+                        "region": "us-east-1",
+                        "version": "5.16.2"
+                    },
+                    "parent": "urn:pulumi:test::pulumi-poc::pulumi:pulumi:Stack::pulumi-poc-test"
+                },
+                {
+                    "urn": "urn:pulumi:test::pulumi-poc::aws:s3/bucket:Bucket::pulumi-bucket",
+                    "custom": true,
+                    "id": "pulumi-bucket-a334565",
+                    "type": "aws:s3/bucket:Bucket",
+                    "inputs": {
+                        "__defaults": [
+                            "acl",
+                            "bucket",
+                            "forceDestroy"
+                        ],
+                        "acl": "private",
+                        "bucket": "pulumi-bucket-a334565",
+                        "forceDestroy": false
+                    },
+                    "outputs": {
+                        "accelerationStatus": "",
+                        "acl": "private",
+                        "arn": "arn:aws:s3:::pulumi-bucket-a334565",
+                        "bucket": "pulumi-bucket-a334565",
+                        "bucketDomainName": "pulumi-bucket-a334565.s3.amazonaws.com",
+                        "bucketRegionalDomainName": "pulumi-bucket-a334565.s3.amazonaws.com",
+                        "corsRules": [],
+                        "forceDestroy": false,
+                        "grants": [],
+                        "hostedZoneId": "Z3AQBSTGFYJSTF",
+                        "id": "pulumi-bucket-a334565",
+                        "lifecycleRules": [],
+                        "loggings": [],
+                        "objectLockConfiguration": null,
+                        "region": "us-east-1",
+                        "replicationConfiguration": null,
+                        "requestPayer": "BucketOwner",
+                        "serverSideEncryptionConfiguration": null,
+                        "tags": {},
+                        "tagsAll": {},
+                        "versioning": {
+                            "enabled": false,
+                            "mfaDelete": false
+                        },
+                        "website": null
+                    },
+                    "parent": "urn:pulumi:test::pulumi-poc::pulumi:pulumi:Stack::pulumi-poc-test",
+                    "provider": "urn:pulumi:test::pulumi-poc::pulumi:providers:aws::default_5_16_2::c7ae4202-25b6-401a-98c7-3a9265147d72"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "kind": "update",
+    "startTime": 1665482956,
+    "message": "",
+    "environment": {
+        "exec.kind": "cli"
+    },
+    "config": {
+        "aws:region": "us-east-1"
+    },
+    "version": 0,
+    "result": "succeeded",
+    "endTime": 1665482960,
+    "resourceChanges": {
+        "create": 2,
+        "same": 5
+    }
+}
